@@ -1,55 +1,53 @@
 class Solution {
 public:
-    bool isValid(string s) 
-{
-    //Make a stack
-    stack<int> st;
+    bool isValid(string s) {
 
-    for(int i=0;i<s.size();i++)
-    {
-          char ch = s[i];
-          if(ch=='(' || ch=='[' || ch=='{')
-          {
-                st.push(ch);
-          }
-          else
-          {
-              if(!st.empty())
-              {
-                   char topCh = st.top();
+     stack<char> st;
 
-                    if(topCh=='(' && ch==')' )
-                    {
-                        st.pop();
-                    }
-                    else if(topCh=='[' && ch==']')
-                    {
-                        st.pop();
-                    }
-                    else if(topCh=='{' && ch=='}')
-                    {
-                        st.pop();
-                    }
-                    else 
-                    {
-                        return false;
-                    }
-              }
-              else
-              {
-                  return false;
-              }
-          }
-    }    
+     for(int i=0;i<s.size();i++)
+     {
+         char ch  = s[i];
 
-    if(st.empty())
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+         if(ch=='(' || ch=='{' || ch=='[')
+         {
+             //open brackett...
+             st.push(ch);
+         }
+         else
+         {
+                if(!st.empty())
+                {
+                     if(st.top()=='(' && ch==')')
+                     {
+                         st.pop();
+                     }
+                     else if(st.top()=='[' && ch==']')
+                     {
+                         st.pop();
+                     }
+                     else if(st.top()=='{' && ch=='}')
+                     {
+                         st.pop();
+                     }
+                     else
+                     {
+                         return false;
+                     }
+                }
+                else
+                {
+                    return false;
+                }
+         }
+     }
 
+     if(st.empty())
+     {
+         return true;
+     }
+     else
+     {
+         return false;
+     }
     }
 };
