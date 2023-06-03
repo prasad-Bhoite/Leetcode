@@ -39,7 +39,7 @@ public:
 
     int n = matrix.size();
 
-   // Transpose of the given matrix...
+    //Transpose of the given matrix...
     for(int i=0;i<n;i++)
     {
         for(int j=i;j<n;j++)
@@ -48,23 +48,18 @@ public:
         }
     }
 
-
-    // Reverse each row of the matrix...
-
+    //Reverse the each row of the matrix...
     for(int i=0;i<n;i++)
     {
-        int low=0;
+        int low = 0;
         int high = n-1;
 
-        while(low<high)
+        while(low < high)
         {
             swap(matrix[i][low],matrix[i][high]);
             low++;
             high--;
-        }
+        } 
     }
-
-    
-    
     }
 };
