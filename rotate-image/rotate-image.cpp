@@ -38,7 +38,6 @@ public:
     //Practise Approach ...
 
     int n = matrix.size();
-
     //Transpose of the given matrix...
     for(int i=0;i<n;i++)
     {
@@ -61,5 +60,6 @@ public:
             high--;
         } 
     }
+    
     }
 };
