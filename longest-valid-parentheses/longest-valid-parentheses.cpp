@@ -36,8 +36,6 @@ public:
             }
 
         }
-
-        return maxLen; 
-        
+        return maxLen;  
     }
 };
