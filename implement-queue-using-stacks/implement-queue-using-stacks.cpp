@@ -60,13 +60,7 @@ public:
     bool empty() 
     {
         return s1.empty() && s2.empty();
-        // if(s1.top()==-1 && s2.top()==-1){
-        //     return true;
-        // }
-        // else
-        // {
-        //     return false;
-        // }
+        //  return (s1.top() <= 0 && s2.top() < 0);
     }
 };
 
