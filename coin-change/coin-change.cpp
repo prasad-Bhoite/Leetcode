@@ -30,8 +30,8 @@ public:
 
             //step 2: ans store karlo dp array me...
             dp[amount]  = mini;
-            return mini;
-            // returm dp;
+            // return mini;
+            return dp[amount];
     }
 
     int coinChange(vector<int>& coins, int amount) 
