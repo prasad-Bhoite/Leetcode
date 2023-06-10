@@ -72,16 +72,17 @@ int solveTab(vector<int> &coins,int amount)
     for(int target=1;target<=amount;target++)
     {
             int mini = INT_MAX;
-
             for(int i=0;i<coins.size();i++)
             {
-                       if(target-coins[i] >= 0 && dp[target-coins[i]]!=INT_MAX)
+                       if(target-coins[i] >= 0)
                        {
                             int ans = dp[target-coins[i]];
-                            mini = min(mini,ans+1);  
+                            if(ans!=INT_MAX)
+                            {
+                                mini = min(mini,ans+1);  
+                            }
                        }
             }
-
             dp[target] = mini;
     } 
     return dp[amount];
