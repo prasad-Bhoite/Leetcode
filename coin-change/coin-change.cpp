@@ -83,7 +83,7 @@ int solveTab(vector<int> &coins,int amount)
                             }
                        }
             }
-            dp[target] = mini;
+            dp[target] = mini;//For each iteration store the mini value in dp array  
     } 
     return dp[amount];
 }
