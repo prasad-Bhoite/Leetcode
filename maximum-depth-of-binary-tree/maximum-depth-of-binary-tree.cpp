@@ -14,7 +14,7 @@ public:
     int maxDepth(TreeNode* root) {
 
         //base case ...
-        if(root == NULL)
+        if(root == 0)
         {
             return 0; //function call return int...
         }
