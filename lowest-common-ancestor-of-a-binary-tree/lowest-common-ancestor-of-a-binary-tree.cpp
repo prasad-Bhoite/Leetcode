@@ -51,6 +51,7 @@ public:
 
         else
         {
+            //means --> leftAns!=NULL && rightAns!=NULL
             return root;
         }
     }
