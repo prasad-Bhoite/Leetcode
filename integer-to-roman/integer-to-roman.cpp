@@ -15,7 +15,6 @@ public:
         ans += symbol;
       }
     }
-
     return ans;
     }
 };
