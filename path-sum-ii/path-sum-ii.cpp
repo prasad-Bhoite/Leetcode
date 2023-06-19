@@ -12,7 +12,7 @@
 class Solution {
 public:
 
-    void solve(TreeNode* root, int targetSum,vector<int> path,vector<vector<int> > &ans,int currentSum)
+    void solve(TreeNode* root, int targetSum,vector<int> &path,vector<vector<int> > &ans,int currentSum)
     {
         //base case ...
         if(root==NULL )
@@ -30,6 +30,7 @@ public:
             {
                 ans.push_back(path);
             }
+            path.pop_back();
                 return;
         }
 
@@ -37,9 +38,13 @@ public:
         path.push_back(root->val);
         currentSum += root->val;
 
-
+        //left jao and right jao...
         solve(root->left,targetSum,path,ans,currentSum);
         solve(root->right,targetSum,path,ans,currentSum);
+
+        //backtracking cases...
+          path.pop_back();
+        currentSum += root->val;
     }
 
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) 
