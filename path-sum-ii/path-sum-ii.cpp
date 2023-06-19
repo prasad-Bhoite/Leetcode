@@ -40,9 +40,6 @@ public:
 
         solve(root->left,targetSum,path,ans,currentSum);
         solve(root->right,targetSum,path,ans,currentSum);
-
-
-
     }
 
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) 
