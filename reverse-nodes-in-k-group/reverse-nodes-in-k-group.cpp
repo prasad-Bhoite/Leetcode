@@ -59,7 +59,7 @@ public:
         if(forward!=NULL)
         {
              // we have still nodes remaining...
-           head->next = reverseKGroup(forward,k);
+              head->next = reverseKGroup(forward,k);
         }
     
     //step C: return head of the modified LL...
