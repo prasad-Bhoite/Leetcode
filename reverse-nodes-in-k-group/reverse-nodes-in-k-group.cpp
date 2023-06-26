@@ -56,11 +56,11 @@ public:
         }
 
     //Step B : Recursive call..
-        if(forward!=NULL)
-        {
+        // if(forward!=NULL)
+        // {
              // we have still nodes remaining...
               head->next = reverseKGroup(forward,k);
-        }
+        // }
     
     //step C: return head of the modified LL...
     return prev;
