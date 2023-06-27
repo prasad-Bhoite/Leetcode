@@ -1,8 +1,9 @@
 class Solution {
 public:
 //Approach 1 : Solve using switch case and for loop
-    int getInteger(char c)
-{
+
+int getInteger(char c)
+ {
     switch(c)
     {
         case 'I' : return 1;
@@ -14,22 +15,25 @@ public:
         case 'M' : return 1000;
         default : return -1;
     }
-}
+ }
     int romanToInt(string s) {
       int n = s.size() , result = 0 , current , next , i = 0;
     while(i < n)
     {
+        // if string has only character...
         if(i == n - 1)
         {
             result += getInteger(s[i]);
             return result;
         }
+        
         current = getInteger(s[i]) , next = getInteger(s[i + 1]);
         if(current >= next)
             result += current , i++;
         else
             result += next - current , i += 2;
     }
+
     return result;
     }
 };
