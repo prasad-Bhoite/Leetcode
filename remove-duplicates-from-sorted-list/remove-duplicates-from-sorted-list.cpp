@@ -27,10 +27,10 @@ public:
         {
             if(curr->val == curr->next->val)
             {
-                ListNode* temp = curr->next;
+                // ListNode* temp = curr->next;
                 curr->next = curr->next->next; // vimp baki optinal...
-                temp->next = NULL;
-                delete temp;
+                // temp->next = NULL;
+                // delete temp;
             }
             else
             {
