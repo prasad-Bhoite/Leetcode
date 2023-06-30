@@ -8,10 +8,11 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
 class Solution {
 public:
-    ListNode* rotateRight(ListNode* head, int k) {
-        
+    ListNode* rotateRight(ListNode* head, int k) 
+    {
         // base case ...
         if(head==NULL || k==0)
         {
@@ -25,16 +26,16 @@ public:
         while(temp->next)
         {
             temp = temp->next;
-            n++;//
+            n++;//6
         }
 
         temp->next = head; // pointing head to the last node...
 
+
+        //step B: 
         k = k%(n+1);
 
-        int jump = n-k;
-
-
+        int jump = n-k; // 6-2 = 4
         temp = head;
         while(jump)
         {
