@@ -25,11 +25,11 @@ bool isVowels(char s)
               low++;
               high--;
           }
-          else if(!isVowels(s[low]))
+           else if(!isVowels(s[low]))
           {
                 low++;
           }
-          else
+           else
             {
               high--;
             }
