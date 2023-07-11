@@ -27,6 +27,7 @@ bool isPalindrome(string &s,int start,int end)
             {
                 string t = s.substr(i,j-i+1);
                 ans = t.size()>ans.size()?t:ans;
+                // ans = t;
             }
         }
     }    
