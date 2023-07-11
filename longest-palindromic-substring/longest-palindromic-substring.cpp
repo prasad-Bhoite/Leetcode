@@ -28,6 +28,9 @@ bool isPalindrome(string &s,int start,int end)
                 string t = s.substr(i,j-i+1);
                 // ans = t.size()>ans.size()?t:ans;
                 // ans = t;
+                
+                
+                // ans is initially empty but we want longets palindromic substring ...
                 if(t.size()  > ans.size())
                 {
                     ans = t;
