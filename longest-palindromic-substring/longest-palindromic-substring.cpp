@@ -26,8 +26,16 @@ bool isPalindrome(string &s,int start,int end)
             if(isPalindrome(s,i,j))
             {
                 string t = s.substr(i,j-i+1);
-                ans = t.size()>ans.size()?t:ans;
+                // ans = t.size()>ans.size()?t:ans;
                 // ans = t;
+                if(t.size()  > ans.size())
+                {
+                    ans = t;
+                }
+                else
+                {
+                    ans = ans;
+                }
             }
         }
     }    
