@@ -13,26 +13,49 @@ class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
 
+
+        //A) By using recursion...
+
         //base case...
-        if(root==NULL)
-        {
-            return NULL;
-        }
+        // if(root==NULL)
+        // {
+        //     return NULL;
+        // }
 
-        if(root->val == val)
-        {
-            return root;
-        }
+        // if(root->val == val)
+        // {
+        //     return root;
+        // }
 
-        //
-        if(val>root->val)
+        // //
+        // if(val>root->val)
+        // {
+        //       return searchBST(root->right,val);  
+        // }
+        // else
+        // {
+        //    return  searchBST(root->left,val);
+        // }
+
+        //B) Iterative way...
+        TreeNode *temp = root;
+
+        while(temp!=NULL)
         {
-              return searchBST(root->right,val);  
+            if(temp->val  == val)
+            {
+                return temp;
+            }
+
+            if(temp->val > val)
+            {
+                temp = temp->left;
+            }
+            else
+            {
+                temp = temp->right;
+            }
         }
-        else
-        {
-           return  searchBST(root->left,val);
-        }
-        
+        return NULL;
     }
 };
