@@ -1,6 +1,7 @@
 class Solution {
 public:
     double myPow(double x, int n) {
+        // 5 solutions for the same...
         double num = 1;
         long long nn = n;
         if(nn < 0) nn = -nn;
