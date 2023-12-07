@@ -1,42 +1,36 @@
 class Solution {
-public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
+ public:
+  vector<vector<int>> threeSum(vector<int>& nums) {
+    if (nums.size() < 3)
+      return {};
 
-        //for storing 3 elements create 2D Vector...
-        vector<vector<int>> ans;    
-        //1 sort the vector...
-        sort(nums.begin(),nums.end());
+    vector<vector<int>> ans;
 
-        int n = nums.size();
+    ranges::sort(nums);
 
-        for(int i=0;i<n;i++)
-         {
-             int a = nums[i];
-             int t = -a;
-             int s = i+1,e=n-1;
-
-             while(s<e)
-             {
-                  if(nums[s]+nums[e] == t)
-                   {
-                       ans.push_back({nums[i],nums[s],nums[e]});
-                       while(s<e && nums[s]==nums[s+1])s++;//for elimanation of repeating element
-                       while(s<e && nums[e]==nums[e-1])e--;//for elimanation of repeating element
-                       s++;
-                       e--;
-                   }
-                   else if(nums[s]+nums[e] > t)
-                    {
-                        e--;
-                    }
-                    else
-                    {
-                        s++;
-                    }
-             }
-            //for elimanation of repeating element
-             while(i+1<n && nums[i+1] == nums[i]) i++;
-         }
-         return ans;
+    for (int i = 0; i + 2 < nums.size(); ++i) {
+      if (i > 0 && nums[i] == nums[i - 1])
+        continue;
+      // Choose nums[i] as the first number in the triplet, then search the
+      // remaining numbers in [i + 1, n - 1].
+      int l = i + 1;
+      int r = nums.size() - 1;
+      while (l < r) {
+        const int sum = nums[i] + nums[l] + nums[r];
+        if (sum == 0) {
+          ans.push_back({nums[i], nums[l++], nums[r--]});
+          while (l < r && nums[l] == nums[l - 1])
+            ++l;
+          while (l < r && nums[r] == nums[r + 1])
+            --r;
+        } else if (sum < 0) {
+          ++l;
+        } else {
+          --r;
+        }
+      }
     }
+
+    return ans;
+  }
 };
